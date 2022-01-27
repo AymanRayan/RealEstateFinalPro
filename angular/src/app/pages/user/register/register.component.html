@@ -1,0 +1,33 @@
+<section class="my-4 container">
+    <form #addUser="ngForm">
+        <div class="mb-3">
+            <input class ="form-control" name="name" ngModel placeholder="enter your name"
+            #name="ngModel" required >
+            <div class="mt-2 alert alert-danger m-0 p-0"
+            *ngIf="name.invalid && (name.touched || addUser.submitted)">
+            <p *ngIf="name.errors?.['required']">Name is required</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input class ="form-control" name="email" ngModel placeholder="enter a valid email" email
+            #email="ngModel" required >
+            <div class="mt-2 alert alert-danger m-0 p-0"
+            *ngIf="email.touched || addUser.submitted">
+            <p *ngIf="email.invalid">Please enter a valid email!</p>
+            <p *ngIf="email.errors?.['required']">Email is required!</p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input class ="form-control" name="password" ngModel placeholder="enter the password" password minlength="6" maxlength="20"
+            #password="ngModel" required >
+            <div class="mt-2 alert alert-danger m-0 p-0"
+            *ngIf="password.touched || addUser.submitted">
+            <p *ngIf="password.invalid">password must be more than 6 characters!</p>
+            <p *ngIf="password.errors?.['required']">Password is required!</p>
+            </div>
+        </div>
+    
+
+    </form>
+
+</section>
