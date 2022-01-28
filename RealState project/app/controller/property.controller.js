@@ -119,7 +119,7 @@ class Property {
                })
         }
     }
-    static addPropImg = async (req,auth,res) => {
+    static addPropImg = async (req,res) => {
         try{
             const propimg = await propertyModel.findById(req.params.id)
             const token = req.header("Authorization").replace("bearer","")
@@ -129,10 +129,10 @@ class Property {
                 addedbyid:user._id,
                 propertyid:req.params.id,
                 url:req.file.path,
-                img:{
-                    data:fs.readFileSync(path.join(__dirname + '../../../images/' + req.file.filename)),
-                    contentType:'image/png'
-                }
+                // img:{
+                //     data:fs.readFileSync(path.join(__dirname + '../../../images/' + req.file.filename)),
+                //     contentType:'image/png'
+                // }
             })
             await imge.save()
             propimg.imgs.push(imge)
@@ -177,8 +177,14 @@ class Property {
         try{
             const prop = await propertyModel.findOne({"name":req.params.name})
             if(!prop) throw new Error ("this property doesn't exist")
-            await
-            prop.imgs.filter(e => e != req.params.id)
+            let imgId=req.params.id
+            if(!prop.imgs.includes(imgId)) throw new Error("this image doesn't exist")
+            // console.log(imgId)
+            // console.log(prop.imgs)
+            let newarr=
+            prop.imgs.filter(e => e != imgId)
+            prop.imgs = newarr
+            // console.log(newarr)
             await prop.save()
             res.status(200).send({
                 apiStatus:true,

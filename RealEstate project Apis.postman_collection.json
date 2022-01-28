@@ -95,12 +95,7 @@
 									"type": "file",
 									"src": "/D:/Civil Studies/Personaly/Screen Shots/2.png"
 								}
-							],
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{admin_url}}/addpropimg/61f056fff586d7e5785921f3",
@@ -176,6 +171,73 @@
 							"path": [
 								"deleteall",
 								"property"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{admin_url}}/delete all images",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWVkYmUyZjNhMWNmODA1MzlkOWMwN2UiLCJpYXQiOjE2NDMxMzkzMTB9.IFHQG3YlEIUUdUnf0BD8QpVdE4sGyUG_yalawCVPyPg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{admin_url}}/deleteallimages/61f056fff586d7e5785921f3",
+							"host": [
+								"{{admin_url}}"
+							],
+							"path": [
+								"deleteallimages",
+								"61f056fff586d7e5785921f3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{admin_url}}/delete prop image",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWVkYmUyZjNhMWNmODA1MzlkOWMwN2UiLCJpYXQiOjE2NDMxMzkzMTB9.IFHQG3YlEIUUdUnf0BD8QpVdE4sGyUG_yalawCVPyPg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{admin_url}}/del/house/61f4538aa6068a03fec03ddd",
+							"host": [
+								"{{admin_url}}"
+							],
+							"path": [
+								"del",
+								"house",
+								"61f4538aa6068a03fec03ddd"
 							]
 						}
 					},

@@ -36,7 +36,7 @@ router.delete("/deleteall/property",auth,adminAuth,propertyControls.deleteAllPro
 router.delete("/deletethis/:id",auth,adminAuth,propertyControls.deleteProp)
 router.post("/addpropimg/:id",auth,adminAuth,upload.single('file'),propertyControls.addPropImg)
 router.delete("/del/:name/:id",auth,adminAuth,propertyControls.deleteSingleImg)
-router.delete("/deleteallimages",auth,adminAuth,propertyControls.deleteAllImg)
+router.delete("/deleteallimages/:id",auth,adminAuth,propertyControls.deleteAllImg)
 
 
 //admin&user dynamic routers
