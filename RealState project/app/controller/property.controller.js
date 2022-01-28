@@ -24,10 +24,18 @@ class Property {
     static allProperty = async (req,res) => {
         try{
           const allproperty = await propertyModel.find()
-         res.status(200).send(allproperty)
+         res.status(200).send({
+            apiStatus:true,
+            data:allproperty,
+            message:"all data" 
+         })
           
         }catch(e){
-            res.status(500).send(e.message)
+            res.status(500).send({
+                apiStatus:false,
+                data:e.message,
+                message:"can't show all properties"
+            })
         }  
     }
     static editProp = async (req,res) => {
@@ -90,7 +98,7 @@ class Property {
     }
     static theProperty = async (req,res) => {
         try{
-            const property = await propertyModel.findById(req.parames.id)
+            const property = await propertyModel.findById(req.params.id)
             let message = "Here is The wanted property"
             let mStatus = 200
             if(!property){

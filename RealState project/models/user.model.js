@@ -54,14 +54,12 @@ const userSchema = new mongoose.Schema({
     },
     pricerange:[{
            type:Number,
-           required:true
      }
    ],
     addresses:[
         {
            addtype:{
             type:String,
-            required:true,
           },
           address:{
            type:String,
@@ -70,7 +68,6 @@ const userSchema = new mongoose.Schema({
     ],
     paymentmethods:{
         type:String,
-        required:true,
         enum:['cash','credit cards','loans']
     },
     creditnumber:{
@@ -83,7 +80,6 @@ const userSchema = new mongoose.Schema({
     arearange:[
         {  
         type:Number,
-        required:true
         },   
     ],
     propertytype:{

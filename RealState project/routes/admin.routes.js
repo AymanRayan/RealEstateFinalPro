@@ -19,7 +19,7 @@ router.post("/profile/:id",auth,upload.single('file'),userControls.profileImgUpl
 router.get("/me", auth, userControls.me)
 
 router.post("/properties",auth,propertyControls.allProperty)
-router.post("/thepropery/:id",auth,propertyControls.theProperty)
+router.get("/theproperty/:id",auth,propertyControls.theProperty)
 
 //admin only
 
@@ -31,7 +31,7 @@ router.delete("/deleteall/users",auth,adminAuth,userControls.deleteAll)
 router.post("/updateprogress/:id",auth,adminAuth,userControls.updateProgress)
 
 router.post("/addnew",auth,adminAuth,propertyControls.addProp)
-router.get("/editone",auth,adminAuth,propertyControls.editProp)
+router.get("/editone/:id",auth,adminAuth,propertyControls.editProp)
 router.delete("/deleteall/property",auth,adminAuth,propertyControls.deleteAllProp)
 router.delete("/deletethis/:id",auth,adminAuth,propertyControls.deleteProp)
 router.post("/addpropimg/:id",auth,adminAuth,upload.single('file'),propertyControls.addPropImg)

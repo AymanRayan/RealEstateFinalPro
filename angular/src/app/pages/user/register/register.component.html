@@ -1,4 +1,4 @@
-<section class="my-4 container">
+<!-- <section class="my-4 container">
     <form #addUser="ngForm">
         <div class="mb-3">
             <input class ="form-control" name="name" ngModel placeholder="enter your name"
@@ -26,8 +26,86 @@
             <p *ngIf="password.errors?.['required']">Password is required!</p>
             </div>
         </div>
-    
+    </form>
 
+</section> -->
+
+<section class="my-4 container">
+    <form [formGroup]="registerUser" (ngSubmit)="handleRegister()">
+    <table>
+        <tr>
+            <td class="text-success">Enter your Name:</td>
+            <td>
+                <div class="mb-3">
+             <input class="form-control" formControlName="name" placeholder="Enter your name" >
+              </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-success">Enter your Email:</td>
+            <td>
+                <div class="mb-3">
+                    <input class="form-control" formControlName="email" placeholder="Enter valid email" >
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-success">Enter the password:</td>
+            <td>
+                <div class="mb-3">
+                    <input class="form-control" formControlName="password" placeholder="Enter Strong password">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-success">Enter your status:</td>
+            <td>
+                <div class="form-check">
+                    <input class="form-check-input" value="true" type="radio" formControlName="status">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Married
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" formControlName="status" value="false" >
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Not Married
+                    </label>
+                  </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-success">Choose your gender:</td>
+            <td>
+                <div class="mb-3">
+                    <select class="form-control" formControlName="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="text-success">Enter your age:</td>
+            <td>
+                <div class="mb-3">
+                    <input class="form-control" placeholder="Enter your age" formControlName="age" >
+                </div>
+            </td>
+        </tr>
+        <tr>
+           <td>
+               <div class="mb-3">
+                <button class="btn btn-success">Register</button>
+               </div>
+            </td>
+            <td>
+                <div class="mb-3">
+                    <input class="form-control" formControlName="type" >
+                </div>
+            </td>
+        </tr>
+    </table>    
     </form>
 
 </section>
