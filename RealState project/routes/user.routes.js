@@ -17,7 +17,7 @@ userrouter.delete("/delete/:id",auth,userControls.deleteMe)
 userrouter.post("/profile/:id",auth,upload.single('file'),userControls.profileImgUpload)
 
 
-userrouter.get("/properties",propertyControls.allProperty)
+userrouter.get("/properties",auth,propertyControls.allProperty)
 userrouter.get("/theproperty/:id",auth,propertyControls.theProperty)
 
 //user only

@@ -18,4 +18,10 @@ propdata:any[] =[]
   addNewUser(userData:any):Observable<any>{
        return this._http.post(`${environment.commonUrl}/user/signOut`,userData)
   }
+  addNewAdmin(adminData:any):Observable<any>{
+    return this._http.post(`${environment.commonUrl}/admin/newadmin`,adminData)
+  }
+  singleUser(id:any):Observable<any>{
+    return this._http.get(`${environment.commonUrl}/user/${id}`)
+  }
 }

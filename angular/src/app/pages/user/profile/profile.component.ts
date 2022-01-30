@@ -1,27 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl,FormGroup,Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from 'src/app/providers/data.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  registerUser:FormGroup=
-new FormGroup({
-  name:new FormControl("", [Validators.required, Validators.minLength(2)]),
-  age:new FormControl(),
-  password:new FormControl(""),
-  email:new FormControl(""),
-  gender:new FormControl(""),
-  malStatus:new FormControl(""),
-  isAdmin: new FormControl(false)
-})
-  constructor() { }
+  user:any
+  loaded=false
+  constructor(private _router:ActivatedRoute, private _data:DataService) { }
 
   ngOnInit(): void {
+    console.log(this._router.snapshot.params['id'])
+    this.getUserData()
   }
-  get name(){ return this.registerUser.get('name')}
-  handleRegister(){
-    console.log(this.registerUser.value)
-  }
+ getUserData(){
+   this._data.singleUser(this._router.snapshot.paramMap.get("id")).subscribe(
+     res => this.user = res.data,
+     e => {},
+     () => this.loaded=true
+   )
+ }
 }

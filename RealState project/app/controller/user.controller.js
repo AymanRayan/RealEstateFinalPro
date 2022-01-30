@@ -106,7 +106,7 @@ class User {
                 return t.token != req.token 
             })
             await req.user.save()
-            res.status(200).send("logged out")
+            res.status(200).send({res:"logged out"})
         }catch(e){
             res.status(500).send({
                 apiStatus:false,

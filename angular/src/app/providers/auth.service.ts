@@ -8,7 +8,9 @@ export class AuthService {
   
   commonApiUrl ='http://localhost:3001'
   public flag = true
-  public userData = null
+  public userData:any
+  public userType:string=""
+  public userid:any
   public islogedin = false
   constructor(private _http:HttpClient) { }
   login(data: any):Observable<any>{

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
+import { DataService } from 'src/app/providers/data.service';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/providers/auth.service';
 
 @Component({
   selector: 'app-admin-register',
@@ -14,16 +17,21 @@ export class AdminRegisterComponent implements OnInit {
     password:new FormControl(""),
     email:new FormControl(""),
     gender:new FormControl(""),
-    malStatus:new FormControl(""),
-    isAdmin: new FormControl(false)
+    status:new FormControl("")
+    // type: new FormControl("admin")
   })
-    constructor() { }
+    constructor(private _data:DataService,private router:Router ,private _auth:AuthService) { }
   
     ngOnInit(): void {
     }
-    get name(){ return this.registerUser.get('name')}
+    // get name(){ return this.registerUser.get('name')}
     handleRegister(){
-      console.log(this.registerUser.value)
-  }
-
+      this._data.addNewAdmin(this.registerUser.value).subscribe(
+        ()=>{
+          this._auth.flag=true
+          this._auth.islogedin=true
+          this.router.navigateByUrl('home')
+        }
+      )
+    }
 }

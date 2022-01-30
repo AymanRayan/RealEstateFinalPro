@@ -24,6 +24,11 @@ x : boolean = false
         (data) => {
           localStorage.setItem("theToken",data.data.token)
           this._auth.userData = data.data
+          
+          console.log(data.data)
+          console.log(this._auth.userData)
+          this._auth.userType = data.data.user.type
+          this._auth.userid= data.data.user._id
         },
         (e)=> {this.msg = e.error.data},
         ()=> {

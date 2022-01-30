@@ -1,9 +1,10 @@
 <section class = "justify-content-center">
   <div class="card mb-4 d-inline" style="width: 18rem;" *ngFor="let p of propdata">
-    <img [src]="p.imgs[0]" class="card-img-top" alt="...">
+    <img src="..." class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{p.name}}</h5>
-      <p class="card-text">This Property Code is {{p.num}}</p>
+      <p class="card-text">This Property Code is {{p.num}}</p> <br>
+      <p class="card-text">It costs {{p.num}}</p>
       <a href="#" class="btn btn-primary">See More</a>
     </div>
   </div>

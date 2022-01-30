@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   constructor(public _loged:AuthService , private router:Router) { }
+  public id = this._loged.userid
 
   ngOnInit(): void {
   }
@@ -17,10 +18,10 @@ export class NavbarComponent implements OnInit {
       (res) => {},
       (e) => {},
       ()=> {
-        this._loged.islogedin=false
-        this.router.navigateByUrl('home')
+        this._loged.islogedin = false
+        this.router.navigateByUrl('login')
       }
     )
-
   }
+
 }

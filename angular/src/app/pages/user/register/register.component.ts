@@ -10,7 +10,8 @@ import { AuthService } from 'src/app/providers/auth.service';
 })
 export class RegisterComponent implements OnInit {
   registerUser:FormGroup= new FormGroup({
-    name:new FormControl(""),
+    name:new FormControl("",
+    [Validators.required, Validators.minLength(2)]),
     email:new FormControl(""),
     password:new FormControl(""),
     status:new FormControl(""),

@@ -27,15 +27,23 @@
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
           </li>
         </ul>
+        <div *ngIf="_loged.userType == 'admin'">
+            <button routerLink="login" class="btn btn-outline-danger mx-2">All users</button>
+            <button routerLink="login" class="btn btn-outline-danger mx-2">Properties</button>
+            <button routerLink="Addnewadmin" class="btn btn-danger">Add New Admin</button>
+            <a class="nav-link active d-inline" aria-current="page" routerLink="profile">Me</a>
+            <button (click)="handlelogout()"  class="btn btn-outline-success mx-2">Logout</button>
+        </div>
+        <div *ngIf="_loged.userType == 'user'">
         <div *ngIf="!_loged.islogedin">
             <button routerLink="login" class="btn btn-outline-success mx-2">Login</button>
             <button routerLink="register" class="btn btn-success">Register</button>
         </div>
         <div *ngIf="_loged.islogedin">
-            <a class="nav-link active d-inline" aria-current="page" href="home">Me</a>
+            <a class="nav-link active d-inline" aria-current="page" routerLink="profile/{{id}}">Me</a>
             <button (click)="handlelogout()"  class="btn btn-outline-danger mx-2">Logout</button>
         </div>
-         
+      </div>
       </div>
     </div>
   </nav>
