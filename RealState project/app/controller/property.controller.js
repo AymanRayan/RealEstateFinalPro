@@ -15,9 +15,18 @@ class Property {
             property.num = alldata[alldata.length - 1].num + 1 
         }
         await property.save()
-        res.status(200).send(`${property.name} added to list`)
+        res.status(200).send({
+            apiStatus:true,
+            data:property,
+            message:`${property.name} added to list`
+        })
+            
         }catch(e){
-            res.status(500).send("can't add new data now")
+            res.status(500).send({
+                apiStatus:false,
+                data:e.message,
+                message:
+                "can't add new data now"})
         }
         
     }

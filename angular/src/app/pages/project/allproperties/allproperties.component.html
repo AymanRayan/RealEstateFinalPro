@@ -1,3 +1,5 @@
+<button  class="mx-2 btn btn-success" routerLink="/addnewprop">Add new prop</button>
+
 <table class="table table-bordered" *ngIf="type == 'admin'">
     <thead>
         <tr>
@@ -5,6 +7,7 @@
             <th>name</th>
             <th>Code</th>
             <th>Is Available</th>
+            <th>Price</th>
             
         </tr>
     </thead>
@@ -14,13 +17,14 @@
             <th>{{prop.name}}</th>
             <th>{{prop.num}}</th>
             <th>{{prop.isAvailable}}</th>
+            <th>{{prop.price}}</th>
             
             <!-- <th> -->
                 <!-- <img *ngIf="user.img; else NoImg" src="http://localhost:3001/files/{{user.img}}" width="50" height="50">
                 <ng-template #NoImg>User has no image</ng-template> -->
             <!-- </th> -->
             <th>
-                <button routerLink="/user/show/{{prop._id}}" class="mx-2 btn btn-primary">show</button>
+                <button routerLink="singleprop/{{prop._id}}" class="mx-2 btn btn-primary">show</button>
                 <button  class="mx-2 btn btn-warning">edit</button>
                 <button  class="mx-2 btn btn-danger">delete</button>
             </th>

@@ -27,4 +27,7 @@ propdata:any[] =[]
   singleUser(id:any):Observable<any>{
     return this._http.get(`${environment.commonUrl}/user/${id}`)
   }
+  addNewProp(propData:any):Observable<any>{
+    return this._http.post(`${environment.commonUrl}/admin/addnew`,propData)
+  }
 }

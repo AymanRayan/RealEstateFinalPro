@@ -1,1 +1,32 @@
-<p>add works!</p>
+<section class="row my-4 container justify-content-center">
+    <form [formGroup]="addForm" (ngSubmit)="handelSubmmit()">
+    <table class="">
+        <tr>
+            <td class="text-danger">Enter The Name:</td>
+            <td>
+                <div class="mb-3">
+             <input class="form-control" formControlName="name" placeholder="Enter The name" >
+              </div>
+            </td>
+        </tr>
+       <tr>
+            <td class="text-danger">Enter The Price:</td>
+            <td>
+                <div class="mb-3">
+                    <input class="form-control" placeholder="Enter The Price" formControlName="price" >
+                </div>
+            </td>
+        </tr>
+        <tr>
+           <td>
+            </td>
+            <td>
+                <div class="mb-3">
+                    <button class="btn btn-danger">Add new Property</button>
+                   </div>
+            </td>
+        </tr>
+    </table>    
+    </form>
+
+</section>
