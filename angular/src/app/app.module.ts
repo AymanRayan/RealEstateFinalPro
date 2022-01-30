@@ -17,6 +17,8 @@ import { HomeComponent } from './pages/home/home.component'
 import { InterceptorInterceptor } from './providers/interceptor.interceptor';
 import { AllusersComponent } from './pages/user/allusers/allusers.component';
 import { AllpropertiesComponent } from './pages/project/allproperties/allproperties.component';
+import { EditproComponent } from './pages/project/editpro/editpro.component';
+import { EditmeComponent } from './pages/user/editme/editme.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { AllpropertiesComponent } from './pages/project/allproperties/allpropert
     HomeComponent,
     AllusersComponent,
     AllpropertiesComponent,
+    EditproComponent,
+    EditmeComponent,
     
     
     
