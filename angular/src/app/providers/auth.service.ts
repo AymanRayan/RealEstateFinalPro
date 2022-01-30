@@ -10,7 +10,7 @@ export class AuthService {
   public flag = true
   public userData:any
   public userType:string=""
-  public userid:any
+  public userid:any 
   public islogedin = false
   constructor(private _http:HttpClient) { }
   login(data: any):Observable<any>{

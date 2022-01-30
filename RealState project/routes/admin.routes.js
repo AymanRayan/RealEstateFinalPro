@@ -18,7 +18,7 @@ router.post("/changepass",auth,userControls.changePassword)
 router.post("/profile/:id",auth,upload.single('file'),userControls.profileImgUpload)
 router.get("/me", auth, userControls.me)
 
-router.post("/properties",auth,propertyControls.allProperty)
+router.get("/properties",auth,propertyControls.allProperty)
 router.get("/theproperty/:id",auth,propertyControls.theProperty)
 
 //admin only

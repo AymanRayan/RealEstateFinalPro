@@ -28,8 +28,8 @@
           </li>
         </ul>
         <div *ngIf="_loged.userType == 'admin'">
-            <button routerLink="login" class="btn btn-outline-danger mx-2">All users</button>
-            <button routerLink="login" class="btn btn-outline-danger mx-2">Properties</button>
+            <button routerLink="allusers" class="btn btn-outline-danger mx-2">All users</button>
+            <button routerLink="allproperties" class="btn btn-outline-danger mx-2">Properties</button>
             <button routerLink="Addnewadmin" class="btn btn-danger">Add New Admin</button>
             <a class="nav-link active d-inline" aria-current="page" routerLink="profile">Me</a>
             <button (click)="handlelogout()"  class="btn btn-outline-success mx-2">Logout</button>

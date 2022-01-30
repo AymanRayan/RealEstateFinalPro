@@ -6,11 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-// userdata:any[] =[]
+
 propdata:any[] =[]
   constructor(private _http:HttpClient)  { }
   getAllUser():Observable<any>{
     return this._http.get(`${environment.commonUrl}/admin/allusers`)
+  }
+  getPropForAdmin():Observable<any>{
+    return this._http.get(`${environment.commonUrl}/admin/properties`)
   }
   getAllProp():Observable<any>{
     return this._http.get(`${environment.commonUrl}/user/properties`)

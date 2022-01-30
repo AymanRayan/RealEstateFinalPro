@@ -15,6 +15,8 @@ import { ProfileComponent } from './pages/user/profile/profile.component';
 import { AdminRegisterComponent } from './pages/user/admin-register/admin-register.component';
 import { HomeComponent } from './pages/home/home.component'
 import { InterceptorInterceptor } from './providers/interceptor.interceptor';
+import { AllusersComponent } from './pages/user/allusers/allusers.component';
+import { AllpropertiesComponent } from './pages/project/allproperties/allproperties.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { InterceptorInterceptor } from './providers/interceptor.interceptor';
     ProfileComponent,
     AdminRegisterComponent,
     HomeComponent,
+    AllusersComponent,
+    AllpropertiesComponent,
     
     
     

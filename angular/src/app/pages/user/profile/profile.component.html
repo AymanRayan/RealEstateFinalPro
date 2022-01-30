@@ -1,7 +1,24 @@
-<div *ngIf="loaded">
-    <th>{{user._id}}</th>
-    <th>{{user.name}}</th>
-    <th>{{user.age}}</th>
-    <th>{{user.email}}</th>
-    <th>{{user.gender}}</th>
+ <div *ngIf="loaded" class="container d-flex justify-content-center align-items-center">
+        <div class="card">
+            <div class="user text-center">
+                <div class="profile"> <img [src]="user.imgs" class="rounded-circle" width="80"> </div>
+            </div>
+            <div class="mt-5 text-center">
+                <h4 class="mb-0">{{user.name}}</h4> <span class="text-muted d-block mb-2">{{user.email}}</span> <button class="btn btn-primary btn-sm follow">Show progress</button>
+                <div class="d-flex justify-content-between align-items-center mt-4 px-4">
+                    <!-- <div class="stats">
+                        <h6 class="mb-0">Payment Method</h6> <span>{{user.paymentmethods}}</span>
+                    </div>
+                    <div class="stats">
+                        <h6 class="mb-0">Min</h6> <span>{{user.pricerange[0]}}</span>
+                    </div>
+                    <div class="stats">
+                        <h6 class="mb-0">Max</h6> <span>{{user.pricerange[1]}}</span>
+                    </div> -->
+                    <button class="btn btn-danger btn-sm mr-4 follow">delete account</button>
+                    <button class="btn btn-warning btn-sm mr-4 ml-4 follow">Edit Profile</button>
+                    <button class="btn btn-success btn-sm ml-4 follow">Edit Price</button>
+                </div>
+            </div>
+        </div>
     </div>

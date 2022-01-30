@@ -12,7 +12,6 @@ export class ProfileComponent implements OnInit {
   constructor(private _router:ActivatedRoute, private _data:DataService) { }
 
   ngOnInit(): void {
-    console.log(this._router.snapshot.params['id'])
     this.getUserData()
   }
  getUserData(){
